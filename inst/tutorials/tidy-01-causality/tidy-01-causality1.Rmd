@@ -127,7 +127,6 @@ To help you analyze this data, you can use a cross tabulation. Cross tabulation 
 #### Exercise
 
 - Using the `group_by` and `count` and `pivot_wider` functions, create a cross tab of the `sex` and `call` variables in the resume data.
-- Remember that a variable in the data frame can be accessed with `$`.
 
 ```{r table, exercise = TRUE}
 

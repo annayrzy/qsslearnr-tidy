@@ -72,13 +72,12 @@ Here in the `ggplot` function, the first argument is name of the data frame that
 
 ```
 
-
 ```{r boxplot-solution}
 star %>% 
   mutate(classtype = as.factor(classtype)) %>%
   ggplot(aes(x = classtype, y = g4math)) + 
-              geom_boxplot() +
-              labs(y = "Math Scores", x = "Class Type") +
+  geom_boxplot() +
+  labs(y = "Math Scores", x = "Class Type") +
   scale_x_discrete(labels = c("Small class", "Regular class", "Regular class with aid"))
 ```
 
@@ -129,7 +128,8 @@ Before we do so, make sure to factorize the `classtype` variable for `ggplot` to
 star %>% 
   mutate(classtype = as.factor(classtype)) %>%
   filter(classtype == c("1", "2")) %>%
-  ggplot(aes(x = g4math, y = g4reading)) + geom_point(aes(color = classtype)) 
+  ggplot(aes(x = g4math, y = g4reading)) + 
+  geom_point(aes(color = classtype)) 
   
 ```
 
@@ -139,7 +139,7 @@ grade_this_code()
 
 ### Finalizing your scatter plot
 
-The scatter plot is looking very good, but it could use a little bit of polish. Let's add axis labels and a title. Remember that you can add these to the plot via the `xlab`, `ylab`, and `ggtitle`. 
+The scatter plot is looking very good, but it could use a little bit of polish. Let's add axis labels and a title. 
 
 #### Exercises
 - Take the current plot and add the following arguments: `xlab`, `ylab`, and `ggtitle`. Make them informative.
@@ -148,15 +148,15 @@ The scatter plot is looking very good, but it could use a little bit of polish. 
 
 ```
 
-
 ```{r niceplot-solution}
 star %>% 
   mutate(classtype = as.factor(classtype)) %>%
   filter(classtype == c("1", "2")) %>%
   ggplot(aes(x = g4math, y = g4reading)) +
-    geom_point(aes(color = classtype)) +
-    labs(x = "Fourth Grade Math Scores", y = "Fourth Grade Reading Score", 
-         title = "Math vs Reading")
+  geom_point(aes(color = classtype)) +
+  labs(x = "Fourth Grade Math Scores", 
+       y = "Fourth Grade Reading Score", 
+       title = "Math vs Reading")
 ```
 
 ## Submit
